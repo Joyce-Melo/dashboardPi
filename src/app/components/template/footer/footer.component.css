@@ -1,0 +1,13 @@
+.footer{
+    position: fixed;
+    bottom: 0; /*para ficar na parte debaixo da pagina, fixado*/
+
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.footer > span { /*para ser aplicado na frase do footer menos no numero 3*/
+    font-size: 1.1 rem;
+    font-weight: 300;
+}

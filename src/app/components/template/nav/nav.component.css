@@ -1,0 +1,25 @@
+.sidenav{
+    background-color: #512DA8;
+    width: 200px;
+    height: 100vh;
+}
+
+.sidenav a {
+    color: #fff;
+}
+
+.sidenav i {
+    padding-right: 10px;
+}
+
+.content {
+    padding: 16px;
+    color: rgb(15, 15, 15);
+    background-color: #fff;
+}
+
+.mat-list-base {
+    padding-top: 200px;
+    display: block; 
+    -webkit-tap-highlight-color: transparent;
+}
