@@ -1,4 +1,7 @@
+import { DespesaVarService } from './../../../services/despesa-var.service';
 import { Component, OnInit } from '@angular/core';
+import { DespesaVariavel } from '../../despesasVar/despesaVar.model';
+import { DespesaFixaService } from 'src/app/services/despesa-fixa.service';
 
 @Component({
   selector: 'app-despesa-fixa-read',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DespesaFixaReadComponent implements OnInit {
 
-  constructor() { }
+  constructor(despesaService: DespesaFixaService ) { }
 
   ngOnInit(): void {
+    
   }
+    
 
 }

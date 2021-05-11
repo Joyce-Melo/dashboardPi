@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { GastosReaisService } from './charts/gastos-reais/gastos-reais.service'
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dashboardPI';
+
+  constructor(private_gastos: GastosReaisService) {}
+
+  ngOnInit() {
+
+  }
 }

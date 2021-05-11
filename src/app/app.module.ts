@@ -1,3 +1,5 @@
+import { HttpClient } from '@angular/common/http';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -33,6 +35,20 @@ import { DashComponent } from './dash/dash.component'
 import { CardComponent } from './card/card.component';
 import { GastosReaisComponent } from './charts/gastos-reais/gastos-reais.component';
 import { GastosIdeaisComponent } from './charts/gastos-ideais/gastos-ideais.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { ChartistModule } from 'ng-chartist';
+import { TabelaTesteComponent } from './tabela-teste/tabela-teste.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { GastosReaisService } from './charts/gastos-reais/gastos-reais.service'
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { from } from 'rxjs';
+import { TabelaTeste2Component } from './tabela-teste2/tabela-teste2.component';
+
 
 
 @NgModule({
@@ -57,6 +73,9 @@ import { GastosIdeaisComponent } from './charts/gastos-ideais/gastos-ideais.comp
     CardComponent,
     GastosReaisComponent,
     GastosIdeaisComponent,
+    DashboardComponent,
+    TabelaTesteComponent,
+    TabelaTeste2Component,
   ],
   imports: [
     BrowserModule,
@@ -72,9 +91,20 @@ import { GastosIdeaisComponent } from './charts/gastos-ideais/gastos-ideais.comp
     MatButtonModule,
     LayoutModule,
     MatCardModule,
-    ChartsModule
+    ChartsModule,
+    MatTooltipModule,
+    ChartistModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    HttpClientModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule
+
+
   ],
-  providers: [],
+  providers: [GastosReaisService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

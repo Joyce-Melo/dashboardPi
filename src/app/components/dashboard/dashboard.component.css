@@ -1,0 +1,48 @@
+.row {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    margin-top: 5%;
+    height: 150px;
+}
+
+#ganhos {
+    padding: 50px;
+    background-color: slateblue;
+}
+
+
+
+#gastos {
+    padding: 50px;
+    background-color: royalblue;
+}
+
+#graficos {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+table {
+    width: 100%;
+}
+
+.edit {
+    margin-right: 10px;
+}
+
+.edit > i {
+    color: #d9cd26;
+}
+
+.delete > i {
+    color: #e3536b;
+}
+
+#tabela-despesaFixa {
+    margin-top: 50px;
+}
+#tabela-despesaVar {
+    margin-top: 50px;
+}

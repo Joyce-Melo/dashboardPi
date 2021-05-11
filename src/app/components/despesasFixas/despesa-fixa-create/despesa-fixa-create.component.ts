@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DespesaFixaService } from 'src/app/services/despesa-fixa.service';
+import { DespesaFixa } from '../despesaFixa.model';
 
 @Component({
   selector: 'app-despesa-fixa-create',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DespesaFixaCreateComponent implements OnInit {
 
-  constructor() { }
+despesaFixa : DespesaFixa = {
+  aluguel: null,
+  transporte: null,                
+  internet: null,
+  alimentacao: null,
+  agua: null,
+  luz: null,
+  academia: null,
+  telefonia: null
+}
+
+  constructor(private despesaService: DespesaFixaService) { }
 
   ngOnInit(): void {
+
+  }
+
+  createDespesaFixa(): void {
+    this.despesaService.create(this.despesaFixa).subscribe(() =>
+    this.despesaService.showMessage('Valor inserido com sucesso'))
   }
 
 }
