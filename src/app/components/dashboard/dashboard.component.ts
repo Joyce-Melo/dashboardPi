@@ -4,6 +4,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as Chartist from 'chartist';
 import {MatTableDataSource} from '@angular/material/table';
 import { DespesaFixaService } from 'src/app/services/despesa-fixa.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AdicionarRendaComponent } from '../dialogs/adicionar-renda/adicionar-renda.component';
 
 
 @Component({
@@ -15,15 +17,23 @@ import { DespesaFixaService } from 'src/app/services/despesa-fixa.service';
 
 
 export class DashboardComponent implements OnInit {
-  @ViewChild("ganhos") ganhos: ElementRef | undefined;
+  
+  
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
-  cadastrar() {
-    console.log(this.ganhos)
+  ngOnInit(): void {
   }
 
-  
-  constructor() { }
-  ngOnInit(): void {
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AdicionarRendaComponent, {
+      width: '250px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
 }

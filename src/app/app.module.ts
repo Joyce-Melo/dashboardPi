@@ -46,7 +46,7 @@ import { TabelavarComponent } from './tabelavar/tabelavar.component';
 import { GraficoRealComponent } from './components/grafico-real/grafico-real.component';
 import { AccumulationChartModule, PieSeriesService, AccumulationDataLabelService, AccumulationLegendService, AccumulationTooltipService } from '@syncfusion/ej2-angular-charts';
 import { GraficoIdealComponent } from './components/grafico-ideal/grafico-ideal.component';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -96,7 +96,8 @@ import { GraficoIdealComponent } from './components/grafico-ideal/grafico-ideal.
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    AccumulationChartModule
+    AccumulationChartModule,
+    MatDialogModule
 
 
   ],

@@ -11,7 +11,7 @@
         <input class="inputGanhos" type="string" placeholder="R$ 0,00" #ganhos>
         <div class="salvarRenda">
           <a mat-list-item routerLink="/"> 
-            <i class="material-icons">
+            <i class="material-icons"(click)="openDialog()">
               add
             </i>
           </a>
