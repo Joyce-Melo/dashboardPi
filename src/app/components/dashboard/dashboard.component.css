@@ -1,27 +1,54 @@
+
 .row {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     position: relative;
-    margin-top: 5%;
+    margin-top: 100px;
     height: 150px;
 }
 
 #ganhos {
-    padding: 50px;
+    padding: 20px;
     background-color: slateblue;
 }
 
+#economia{
+    padding: 20px;
+    background-color: #D1C4E6;
+}
 
 
 #gastos {
-    padding: 50px;
+    padding: 20px;
     background-color: royalblue;
 }
 
-#graficos {
+.inputGanhos[type=string] {
+    background-color: slateblue;
+    color: white;
+    border: none;
+
+  }
+
+  .inputEconomia[type=string] {
+    background-color: #D1C4E6;
+    color: white;
+    border: none;
+
+  }
+
+  .inputGastos[type=string] {
+    background-color: royalblue;
+    color: white;
+    border: none;
+
+  }
+
+  
+
+.grafico-container {
     display: flex;
     justify-content: space-around;
-    
 }
 
 table {
@@ -40,9 +67,9 @@ table {
     color: #e3536b;
 }
 
-#tabela-despesaFixa {
-    margin-top: 50px;
-}
-#tabela-despesaVar {
-    margin-top: 50px;
-}
+/*.tabela-container {
+    display: flex;
+    justify-content: space-around;
+}*/
+
+

@@ -1,0 +1,44 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 100px;
+    height: 150px;
+}
+
+#ganhos {
+    padding: 20px;
+    background-color: slateblue;
+}
+
+#economia{
+    padding: 20px;
+    background-color: #D1C4E6;
+}
+
+
+#gastos {
+    padding: 20px;
+    background-color: royalblue;
+}
+
+.inputGanhos[type=number] {
+    background-color: slateblue;
+    color: white;
+    border: none;
+
+  }
+
+  .inputEconomia[type=number] {
+    background-color: #D1C4E6;
+    color: white;
+    border: none;
+
+  }
+
+  .inputGastos[type=number] {
+    background-color: royalblue;
+    color: white;
+    border: none;
+
+  }

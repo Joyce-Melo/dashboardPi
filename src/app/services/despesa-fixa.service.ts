@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar'
 })
 export class DespesaFixaService {
 
-  baseUrl = "http://localhost:3030/despesafixas"
+  baseUrl = "http://localhost:3030/"
 
   constructor(private snackBar: MatSnackBar ,private http: HttpClient) { }
 

@@ -31,24 +31,21 @@ import { RendaReadComponent } from './components/renda/renda-read/renda-read.com
 import { RendaUpdateComponent } from './components/renda/renda-update/renda-update.component';
 import { RendaDeleteComponent } from './components/renda/renda-delete/renda-delete.component';
 import { ChartsModule } from 'ng2-charts';
-import { DashComponent } from './dash/dash.component'
-import { CardComponent } from './card/card.component';
-import { GastosReaisComponent } from './charts/gastos-reais/gastos-reais.component';
-import { GastosIdeaisComponent } from './charts/gastos-ideais/gastos-ideais.component';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { ChartistModule } from 'ng-chartist';
-import { TabelaTesteComponent } from './tabela-teste/tabela-teste.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { GastosReaisService } from './charts/gastos-reais/gastos-reais.service'
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { from } from 'rxjs';
-import { TabelaTeste2Component } from './tabela-teste2/tabela-teste2.component';
-
+import { TabelaComponent } from './tabela/tabela.component';
+import { TabelavarComponent } from './tabelavar/tabelavar.component';
+import { GraficoRealComponent } from './components/grafico-real/grafico-real.component';
+import { AccumulationChartModule, PieSeriesService, AccumulationDataLabelService, AccumulationLegendService, AccumulationTooltipService } from '@syncfusion/ej2-angular-charts';
+import { GraficoIdealComponent } from './components/grafico-ideal/grafico-ideal.component';
 
 
 @NgModule({
@@ -69,13 +66,11 @@ import { TabelaTeste2Component } from './tabela-teste2/tabela-teste2.component';
     RendaReadComponent,
     RendaUpdateComponent,
     RendaDeleteComponent,
-    DashComponent,
-    CardComponent,
-    GastosReaisComponent,
-    GastosIdeaisComponent,
     DashboardComponent,
-    TabelaTesteComponent,
-    TabelaTeste2Component,
+    TabelaComponent,
+    TabelavarComponent,
+    GraficoRealComponent,
+    GraficoIdealComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,11 +95,12 @@ import { TabelaTeste2Component } from './tabela-teste2/tabela-teste2.component';
     HttpClientModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    AccumulationChartModule
 
 
   ],
-  providers: [GastosReaisService],
+  providers: [PieSeriesService, AccumulationDataLabelService, AccumulationLegendService,  AccumulationTooltipService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

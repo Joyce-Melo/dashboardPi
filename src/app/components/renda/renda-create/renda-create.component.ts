@@ -1,3 +1,5 @@
+import { Renda } from './../renda.model';
+import { RendaService } from './../../../services/renda.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RendaCreateComponent implements OnInit {
 
-  constructor() { }
+  renda: any;
+
+
+  constructor(private RendaService: RendaService) { }
 
   ngOnInit(): void {
+  }
+
+  saveRenda() {
+    this.RendaService.createRenda(this.renda).subscribe(res => {
+    })
+
   }
 
 }

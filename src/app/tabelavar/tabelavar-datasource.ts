@@ -5,42 +5,27 @@ import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
-export interface TabelaTesteItem {
-  name: string;
-  id: number;
+export interface TabelavarItem {
+  despesaVar: string;
+  id?: number;
+  value?: number;
 }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: TabelaTesteItem[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Lithium'},
-  {id: 4, name: 'Beryllium'},
-  {id: 5, name: 'Boron'},
-  {id: 6, name: 'Carbon'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
+const EXAMPLE_DATA: TabelavarItem[] = [
+  {despesaVar: 'Investimento', value: 0},            
+  {despesaVar: 'Lazer', value: 0},
+  {despesaVar: 'Saúde', value: 0},
+  {despesaVar: 'Medicamento', value: 0},
 ];
 
 /**
- * Data source for the TabelaTeste view. This class should
+ * Data source for the Tabelavar view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class TabelaTesteDataSource extends DataSource<TabelaTesteItem> {
-  data: TabelaTesteItem[] = EXAMPLE_DATA;
+export class TabelavarDataSource extends DataSource<TabelavarItem> {
+  data: TabelavarItem[] = EXAMPLE_DATA;
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
 
@@ -53,7 +38,7 @@ export class TabelaTesteDataSource extends DataSource<TabelaTesteItem> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<TabelaTesteItem[]> {
+  connect(): Observable<TabelavarItem[]> {
     if (this.paginator && this.sort) {
       // Combine everything that affects the rendered data into one update
       // stream for the data-table to consume.
@@ -76,7 +61,7 @@ export class TabelaTesteDataSource extends DataSource<TabelaTesteItem> {
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: TabelaTesteItem[]): TabelaTesteItem[] {
+  private getPagedData(data: TabelavarItem[]): TabelavarItem[] {
     if (this.paginator) {
       const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
       return data.splice(startIndex, this.paginator.pageSize);
@@ -89,7 +74,7 @@ export class TabelaTesteDataSource extends DataSource<TabelaTesteItem> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: TabelaTesteItem[]): TabelaTesteItem[] {
+  private getSortedData(data: TabelavarItem[]): TabelavarItem[] {
     if (!this.sort || !this.sort.active || this.sort.direction === '') {
       return data;
     }
@@ -97,15 +82,15 @@ export class TabelaTesteDataSource extends DataSource<TabelaTesteItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'despesaVar': return compare(a.despesaVar, b.despesaVar, isAsc);
+        //case 'id': return compare(+a.id, +b.id, isAsc);
         default: return 0;
       }
     });
   }
 }
 
-/** Simple sort comparator for example ID/Name columns (for client-side sorting). */
+/** Simple sort comparator for example ID/despesaVar columns (for client-side sorting). */
 function compare(a: string | number, b: string | number, isAsc: boolean): number {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

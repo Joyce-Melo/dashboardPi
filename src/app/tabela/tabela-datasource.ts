@@ -3,44 +3,36 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
+import { inputs } from '@syncfusion/ej2-angular-charts/src/chart/chart.component';
+import { TypeofExpr } from '@angular/compiler';
 
 // TODO: Replace this with your own data model type
-export interface TabelaTeste2Item {
-  name: string;
-  id: number;
+export interface TabelaItem {
+  despesa: string;
+  id?: number;
+  value?: any;
 }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: TabelaTeste2Item[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Lithium'},
-  {id: 4, name: 'Beryllium'},
-  {id: 5, name: 'Boron'},
-  {id: 6, name: 'Carbon'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
+const EXAMPLE_DATA: TabelaItem[] = [
+  {despesa: 'Aluguel', value: 0},
+  {despesa: 'Transporte', value: 0},
+  {despesa: 'Internet', value: 0},
+  {despesa: 'Alimentação', value: 0},
+  {despesa: 'Agua', value: 0},
+  {despesa: 'Luz', value: 0},
+  {despesa: 'Academia', value: 0},
+  {despesa: 'Telefonia', value: 0},
+  
 ];
 
 /**
- * Data source for the TabelaTeste2 view. This class should
+ * Data source for the Tabela view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class TabelaTeste2DataSource extends DataSource<TabelaTeste2Item> {
-  data: TabelaTeste2Item[] = EXAMPLE_DATA;
+export class TabelaDataSource extends DataSource<TabelaItem> {
+  data: TabelaItem[] = EXAMPLE_DATA;
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
 
@@ -53,7 +45,7 @@ export class TabelaTeste2DataSource extends DataSource<TabelaTeste2Item> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<TabelaTeste2Item[]> {
+  connect(): Observable<TabelaItem[]> {
     if (this.paginator && this.sort) {
       // Combine everything that affects the rendered data into one update
       // stream for the data-table to consume.
@@ -76,7 +68,7 @@ export class TabelaTeste2DataSource extends DataSource<TabelaTeste2Item> {
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: TabelaTeste2Item[]): TabelaTeste2Item[] {
+  private getPagedData(data: TabelaItem[]): TabelaItem[] {
     if (this.paginator) {
       const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
       return data.splice(startIndex, this.paginator.pageSize);
@@ -89,7 +81,7 @@ export class TabelaTeste2DataSource extends DataSource<TabelaTeste2Item> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: TabelaTeste2Item[]): TabelaTeste2Item[] {
+  private getSortedData(data: TabelaItem[]): TabelaItem[] {
     if (!this.sort || !this.sort.active || this.sort.direction === '') {
       return data;
     }
@@ -97,8 +89,8 @@ export class TabelaTeste2DataSource extends DataSource<TabelaTeste2Item> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'despesa': return compare(a.despesa, b.despesa, isAsc);
+        //case 'id': return compare(+a.id, +b.id, isAsc);
         default: return 0;
       }
     });

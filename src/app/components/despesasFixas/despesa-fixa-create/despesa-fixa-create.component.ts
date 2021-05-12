@@ -10,14 +10,14 @@ import { DespesaFixa } from '../despesaFixa.model';
 export class DespesaFixaCreateComponent implements OnInit {
 
 despesaFixa : DespesaFixa = {
-  aluguel: null,
-  transporte: null,                
-  internet: null,
-  alimentacao: null,
-  agua: null,
-  luz: null,
-  academia: null,
-  telefonia: null
+  aluguel: 0,
+  transporte:0,                
+  internet:0,
+  alimentacao:0 ,
+  agua: 0,
+  luz: 0,
+  academia: 0,
+  telefonia: 0
 }
 
   constructor(private despesaService: DespesaFixaService) { }

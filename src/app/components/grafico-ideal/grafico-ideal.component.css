@@ -1,0 +1,14 @@
+.gaficoV-container{
+    display: flex;
+    margin-top: 50px;
+    height: 400px;
+    width: 400px;
+}
+
+
+.graficoconfig{
+    display: flex;
+    height: 400px;
+    width: 400px;
+}
+

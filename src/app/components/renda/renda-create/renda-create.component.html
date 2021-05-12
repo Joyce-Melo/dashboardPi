@@ -1,1 +1,16 @@
-<p>renda-create works!</p>
+<div class="col-sm" id="ganhos">
+  <div class="icone-ganhos">
+    <span class="material-icons">
+      attach_money
+    </span>
+  </div>
+  <p class="card-category">Ganhos</p>
+  <input class="inputGanhos" type="number" placeholder="R$ 0,00" [(ngModel)]="renda.ganhos">
+  <div class="salvarRenda">
+    <a mat-list-item routerLink="/" (click)=saveRenda()> 
+      <i class="material-icons">
+          done
+      </i>
+    </a>
+  </div>
+</div>

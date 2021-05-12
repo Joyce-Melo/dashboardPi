@@ -1,12 +1,9 @@
-import { DashComponent } from './dash/dash.component'
-import { CardComponent } from './card/card.component'
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [{
-  path: 'dashboard', 
-  component: DashComponent 
-}];
+  path: 'dashboard', component: DashboardComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

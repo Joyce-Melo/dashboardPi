@@ -15,22 +15,14 @@ export class RendaService {
 
 
 
-  create(renda: Renda): Observable<Renda>{  
+  createRenda(renda: Renda): Observable<Renda>{  
      
     return this.http.post<Renda>(this.baseUrl, renda) 
-  }
-
-  read(): Observable<Renda[]> {
-    return this.http.get<Renda[]>(this.baseUrl)
-  }
-
-  readById(id: string): Observable<Renda>{
-    const url = `${this.baseUrl}`
-    return this.http.get<Renda>(url)
   }
 
   update(renda: Renda): Observable<Renda> {
     const url = `${this.baseUrl}/${renda}`
     return this.http.put<Renda>(url, renda)
   }
+
 }
