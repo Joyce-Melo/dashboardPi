@@ -6,6 +6,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import { DespesaFixaService } from 'src/app/services/despesa-fixa.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AdicionarRendaComponent } from '../dialogs/adicionar-renda/adicionar-renda.component';
+import { AdicionarEconomiaComponent } from '../dialogs/adicionar-economia/adicionar-economia.component';
 
 
 @Component({
@@ -28,11 +29,24 @@ export class DashboardComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AdicionarRendaComponent, {
-      width: '250px',
+      minWidth: '400px',
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+    });
+
+  
+  
+  }
+    openDialogEco(): void {
+    const dialog_Ref = this.dialog.open(AdicionarEconomiaComponent,{
+      minWidth: '400px'
+    })
+
+    
+    dialog_Ref.afterClosed().subscribe(result => {
+      console.log('This dialog was closed')
     });
   }
 

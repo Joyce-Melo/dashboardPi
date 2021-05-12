@@ -13,18 +13,24 @@
     </ng-container>
 
     <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef >Ações</th>
+      <th mat-header-cell *matHeaderCellDef >Ações
+        <a routerLink="" class="add">
+          <i class="material-icons">
+              add
+          </i>
+      </a>
+        <a routerLink="/" class="edit"> <!--vai montar o url de acordo com o id do produto selecionado, do contexto dessa celula-->
+          <i class="material-icons">
+              edit
+          </i>
+      </a>
+      <a routerLink="" class="delete">
+        <i class="material-icons">
+            delete
+        </i>
+    </a>
+      </th>
       <td mat-cell *matCellDef="let row">
-          <a routerLink="products/update/{{ row.id }}" class="edit"> <!--vai montar o url de acordo com o id do produto selecionado, do contexto dessa celula-->
-              <i class="material-icons">
-                  edit
-              </i>
-          </a>
-          <a routerLink="" class="delete">
-              <i class="material-icons">
-                  delete
-              </i>
-          </a>
       </td> <!--pipe | currency: 'BRL' para formatar o preço -->
     </ng-container>
 

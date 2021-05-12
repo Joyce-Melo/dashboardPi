@@ -18,7 +18,7 @@ export class RendaCreateComponent implements OnInit {
   }
 
   saveRenda() {
-    this.RendaService.createRenda(this.renda).subscribe(res => {
+    this.RendaService.postRenda(this.renda).subscribe(res => {
     })
 
   }

@@ -11,18 +11,23 @@ export class RendaService {
   baseUrl = "http://localhost:3030/"
 
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient) { }
 
 
 
-  createRenda(renda: Renda): Observable<Renda>{  
+  //createRenda(renda: Renda): Observable<Renda>{  
      
-    return this.http.post<Renda>(this.baseUrl, renda) 
-  }
+  //  return this.httpClient.post<Renda>(this.baseUrl, renda) 
+  //}
 
   update(renda: Renda): Observable<Renda> {
     const url = `${this.baseUrl}/${renda}`
-    return this.http.put<Renda>(url, renda)
+    return this.httpClient.put<Renda>(url, renda)
+  }
+
+  public postRenda(renda:any): Observable<Renda>{
+    return this.httpClient.post<any>(this.baseUrl, renda);
   }
 
 }

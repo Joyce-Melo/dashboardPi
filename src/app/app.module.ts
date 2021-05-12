@@ -37,8 +37,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { from } from 'rxjs';
 import { TabelaComponent } from './tabela/tabela.component';
@@ -47,6 +46,12 @@ import { GraficoRealComponent } from './components/grafico-real/grafico-real.com
 import { AccumulationChartModule, PieSeriesService, AccumulationDataLabelService, AccumulationLegendService, AccumulationTooltipService } from '@syncfusion/ej2-angular-charts';
 import { GraficoIdealComponent } from './components/grafico-ideal/grafico-ideal.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { AdicionarEconomiaComponent } from './components/dialogs/adicionar-economia/adicionar-economia.component';
+import { DespesasFixasComponent } from './components/dialogs/despesas-fixas/despesas-fixas.component';
+
+
 
 @NgModule({
   declarations: [
@@ -71,6 +76,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     TabelavarComponent,
     GraficoRealComponent,
     GraficoIdealComponent,
+    AdicionarEconomiaComponent,
+    DespesasFixasComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,7 +104,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatFormFieldModule,
     MatInputModule,
     AccumulationChartModule,
-    MatDialogModule
+    MatDialogModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
 
 
   ],
