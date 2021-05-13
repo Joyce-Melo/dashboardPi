@@ -49,7 +49,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AdicionarEconomiaComponent } from './components/dialogs/adicionar-economia/adicionar-economia.component';
-import { DespesasFixasComponent } from './components/dialogs/despesas-fixas/despesas-fixas.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 
@@ -77,7 +77,7 @@ import { DespesasFixasComponent } from './components/dialogs/despesas-fixas/desp
     GraficoRealComponent,
     GraficoIdealComponent,
     AdicionarEconomiaComponent,
-    DespesasFixasComponent,
+
   ],
   imports: [
     BrowserModule,

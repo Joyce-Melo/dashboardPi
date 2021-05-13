@@ -15,7 +15,7 @@ export class GraficoRealComponent implements OnInit {
 
 
   constructor() {
-    this.charTitle = 'Estatiscas de Consumo de Frutas'
+    this.charTitle = 'Distribuição de Gastos'
     this.data = [
      { name: 'Apple', value: 25, text:'25%'},
      { name: 'Orange', value: 25, text:'25%'},

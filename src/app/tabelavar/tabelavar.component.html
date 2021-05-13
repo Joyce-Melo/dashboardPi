@@ -15,12 +15,12 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef >Ações
         <a routerLink="" class="add">
-          <i class="material-icons">
+          <i class="material-icons" (click)="openDialog()">
               add
           </i>
       </a>
         <a routerLink="/" class="edit"> <!--vai montar o url de acordo com o id do produto selecionado, do contexto dessa celula-->
-          <i class="material-icons">
+          <i class="material-icons" (click)="openDialogEdit()">
               edit
           </i>
       </a>
