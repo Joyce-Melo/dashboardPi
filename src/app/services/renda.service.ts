@@ -10,6 +10,7 @@ export class RendaService {
 
   baseUrl = "http://localhost:3030/"
 
+  
 
   constructor(
     private httpClient: HttpClient) { }

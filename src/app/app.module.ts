@@ -53,6 +53,8 @@ import {MatDividerModule} from '@angular/material/divider';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,7 +79,7 @@ import {MatDividerModule} from '@angular/material/divider';
     GraficoRealComponent,
     GraficoIdealComponent,
     AdicionarEconomiaComponent,
-
+     
   ],
   imports: [
     BrowserModule,

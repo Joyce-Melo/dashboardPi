@@ -14,7 +14,7 @@ export class AdicionarEconomiaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-      economia: ['', [Validators.required]]
+      valor_extra: ['', [Validators.required]]
   }
 
   
